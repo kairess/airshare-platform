@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+        <title>Connect and Share</title>
+    </head>
+    <body>
+        <h1>Connect and Share</h1>
+
+        <div class="list-group">
+            {% for ip, d in db.items() %}
+            <a href="http://{{ d['ip_addr'] }}:{{ d['port'] }}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                <svg width="32" height="32" data-jdenticon-value="{{ d['code'] }}" alt="{{ d['code'] }}" class="rounded-circle flex-shrink-0"></svg>
+                <div class="d-flex gap-2 w-100 justify-content-between">
+                    <div>
+                        <h6 class="mb-0">{{ d['code'] }}</h6>
+                        <p class="mb-0 opacity-75">{{ d['ip_addr'] }}:{{ d['port'] }}</p>
+                    </div>
+                    <small class="opacity-50 text-nowrap">
+                        {{ d['updated_at'] | ctime }}
+                    </small>
+                </div>
+            </a>
+            {% endfor %}
+          </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/jdenticon@3.1.1/dist/jdenticon.min.js" async
+        integrity="sha384-l0/0sn63N3mskDgRYJZA6Mogihu0VY3CusdLMiwpJ9LFPklOARUcOiWEIGGmFELx"
+        crossorigin="anonymous">
+</script>
+    </body>
+</html>
