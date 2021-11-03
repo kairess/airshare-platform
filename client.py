@@ -3,7 +3,7 @@ import requests
 import socket
 import webbrowser
 
-SERVER_ADDR = 'http://172.30.1.13:32456'
+SERVER_ADDR = 'http://172.30.1.48:32456'
 
 CODE = 'brad-macbook-pro'
 PORT = 23456
