@@ -59,6 +59,7 @@ class MyApp(QWidget):
         self.btn2.setEnabled(True)
         
         self.process = airshare.receiver.receive_server_proc(code=code, port=PORT)
+        self.process.daemon = True
         self.process.start()
 
     def disconnect(self):
