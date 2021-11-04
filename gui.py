@@ -1,4 +1,4 @@
-import sys, socket, os
+import sys, socket
 import airshare
 import requests
 import webbrowser
@@ -7,11 +7,6 @@ from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QVBoxLayou
 SERVER_ADDR = 'http://172.30.1.48:32456'
 PORT = 23456
 
-if getattr(sys, 'frozen', False):
-    application_path = os.path.dirname(sys.executable)
-else:
-    application_path = os.path.dirname(os.path.abspath(__file__))
-
 class MyApp(QWidget):
     def __init__(self):
         super().__init__()
@@ -19,7 +14,7 @@ class MyApp(QWidget):
 
     def initUI(self):
         lbl = QLabel(self)
-        lbl.setText('Your computer name (English):' + application_path)
+        lbl.setText('Your computer name (English):')
 
         self.qle = QLineEdit(self)
 
