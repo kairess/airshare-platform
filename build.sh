@@ -1,0 +1,1 @@
+pyinstaller -w -F --add-data="static/*:airshare/static" -n "Airshare Client" gui.py
